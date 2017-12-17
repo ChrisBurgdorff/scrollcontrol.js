@@ -168,7 +168,7 @@ $(document).ready(function(){
   function PerformAnimations(pos) {
     for (var i =0; i < animations.length; i++) {
       if (pos >= animations[i].sPos && pos <= animations[i].ePos) {
-        if (animations[i].cProp == "color" || animations[i].cProp == "background-color") {
+        if (animations[i].cProp.toLowerCase().indexOf("color") != -1) {
           var newVal = GetNewColor(animations[i].sVal, animations[i].eVal, (pos - animations[i].sPos) / (animations[i].ePos - animations[i].sPos));
         } else {
         var newVal = ((pos - animations[i].sPos) * (animations[i].eVal - animations[i].sVal) / (animations[i].ePos - animations[i].sPos)) + animations[i].sVal;
